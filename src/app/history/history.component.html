@@ -1,0 +1,30 @@
+<div class="history-container">
+  <h2 class="history-title">Upload History</h2>
+
+  <div *ngIf="images.length === 0" class="no-records">
+    <p>No records found</p>
+  </div>
+
+  <div *ngIf="images.length > 0" class="history-list">
+    <div *ngFor="let image of images" class="history-item">
+      <div class="history-card">
+        <div class="image-section">
+          <h3 class="section-title">Uploaded Image</h3>
+          <div class="image-container">
+            <img [src]="'data:' + image.contentType + ';base64,' + image.imageBase64" alt="Uploaded Image" />
+          </div>
+        </div>
+        <div class="text-section">
+          <h3 class="section-title">
+            Extracted Text
+            <button (click)="copyText(image.extractedText)" class="btn-copy">Copy</button>
+          </h3>
+          <p class="extracted-text">{{ image.extractedText }}</p>
+          <div class="bold-words">
+            <span *ngFor="let word of image.boldWords" class="bold-word">{{ word }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

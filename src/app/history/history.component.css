@@ -1,0 +1,126 @@
+.history-container {
+    background-color: #1a202c;
+    min-height: calc(100vh - 56px); /* Adjust based on your navbar height */
+    padding: 2rem;
+    color: #e2e8f0;
+  }
+  
+  .history-title {
+    color: #3498db;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .no-records {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #a0aec0;
+  }
+  
+  .history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .history-item {
+    background-color: #2d3748;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .history-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .history-card {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .image-section, .text-section {
+    flex: 1;
+    min-width: 300px;
+    padding: 1.5rem;
+  }
+  
+  .section-title {
+    color: #3498db;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .image-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* 4:3 Aspect Ratio */
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  
+  .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .extracted-text {
+    color: #a0aec0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: 1rem;
+  }
+  
+  .bold-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .bold-word {
+    background-color: #eec75d;
+    color: #1a202c;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  
+  .btn-copy {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-copy:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .history-card {
+      flex-direction: column;
+    }
+    
+    .image-section, .text-section {
+      width: 100%;
+    }
+  }
